@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <a href="./Index.html"> <img style="border: 0em;" src="./Images/logo.png"
+        alt="Logo"
+        width="300"
+        height="140"
+        />
+    </a>
+    <p>  <a href="./impressum.html">Impressum</a>  <a href="./Hilfe.html">Hilfe</a> <a href="./kunden.html">Kundenregistrierung</a> </p>
+    <hr>
+</header>
+<body>
+    <form action="/register" method="post">
+        <label for="mail">E-Mail</label> <br>
+        <input type="text" id="mail" name="mail"> <br>
+        <hr>
+        <label for="anrede">Anrede</label>
+
+        <select name="anrede" id="anrede">
+            <option value="Herr">Herr</option>
+            <option value="Frau">Frau</option>
+            <option value="divers">divers</option>
+        </select> <br>
+        <hr>
+        <label for="vname"> Vorname</label> <br>
+        <input type="text" id="vname" name="vname"> <br>
+        <hr>
+       <label for="nname"> Nachname</label> <br>
+       <input type="text" id="nname" name="nname"> <br>
+       <label for="plz">Postleitzahl</label> <br>
+       <input type="text" id="plz" name="plz"> <br>
+       <label for="ort">Ort</label> <br>
+       <input type="text" id="ort" name="ort"> <br>
+       <label for="strasse">Straße</label> <br>
+       <input type="text" id="strasse" name="strasse"> <br>
+       <label for="hausnummer">Hausnummer</label> <br>
+       <input type="text" id="hausnummer" name="hausnummer"> <br>
+       <input type="submit" value="Absenden">
+    </form>
+    
+</body>
+</html>

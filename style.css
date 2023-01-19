@@ -1,9 +1,14 @@
 body {
-    background-image: linear-gradient(to left, rgba(255,0,0,0),   #41bf61
-    );
-  }
-  header {
-    background-image: linear-gradient(to left, rgba(255,0,0,0),    #41bf61
+  background-image: linear-gradient(to left, rgba(255,0,0,0),   #41bf61
+  );
+}
+header {
+  background-image: linear-gradient(to left, rgba(255,0,0,0),    #41bf61
 
-     );
-  }
+  );
+}
+
+.btn-green:hover {
+  background-color: #13e513;
+  color: white;
+}

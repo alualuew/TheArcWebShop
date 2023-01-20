@@ -10,20 +10,21 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js%22%3E"></script>
 
 </head>
-<header>
-    <a href="./Index.html"> <img style="border: 0em;" src="./Images/logo.png"
-                                 alt="Logo"
-                                 width="200"
-                                 height="90"
-    />
+<header class="d-flex justify-content-between align-items-center">
+    <a href="./Index.html">
+      <img style="border: 0em;" src="./Images/logo.png" alt="Logo" width="200" height="90" />
     </a>
-<hr>
-    </div>
-    </div>
-    <p><h1>Kundenregistrierung</a></h1> </p>    <hr>
-</header>
+    <nav class="d-flex">
+      <a href="./kunden.html" class="btn btn-green m-2">Kundenregistrierung</a>
+      <a href="./impressum.html" class="btn btn-green m-2">Impressum</a>
+      <a href="./Hilfe.html" class="btn btn-green m-2">Hilfe</a>
+    </nav>
+  </header>
+  <hr>
 <body class="container">
-<form action="/register" method="post">
+    <h1 class="text-center">Kundenregistrierung</h1>
+<hr>
+    <form action="/register" method="post">
     <div class="form-group">
         <label for="mail">E-Mail</label>
         <input type="text" class="form-control" id="mail" name="mail">
@@ -63,6 +64,7 @@
     <input type="submit" class="btn btn-green m-2" value="Absenden">
 </form>
 </body>
+<hr>
 <footer class="container" style="text-align: center;">
     <div class="row">
         <div class="col-12">

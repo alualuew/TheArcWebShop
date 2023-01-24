@@ -8,16 +8,30 @@ header {
   );
 }
 
+.btn-green, .btn-green:visited, .btn-green:hover, .btn-green:active, .btn-green:focus, .btn-green:active:hover {
+  font-style: inherit;
+  color: inherit;
+  background-color: transparent;
+  font-size: inherit;
+  text-decoration: none;
+  font-variant: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  border-radius: inherit;
+  border: inherit;
+  outline: inherit;
+  box-shadow: inherit;
+
+}
 
 .btn-green:hover {
-  background-color: #13e513;
+  background-color: #218a3b;
   color: white;
 }
 
-.dropdown-menu {
+ 
 
-  background-color: #13e513;
 
-}
 
 

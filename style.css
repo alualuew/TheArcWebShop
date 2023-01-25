@@ -2,11 +2,7 @@ body {
   background-image: linear-gradient(to left, rgba(255,0,0,0),   #41bf61
   );
 }
-header {
-  background-image: linear-gradient(to left, rgba(255,0,0,0),    #41bf61
 
-  );
-}
 
 .btn-green, .btn-green:visited, .btn-green:hover, .btn-green:active, .btn-green:focus, .btn-green:active:hover {
   font-style: inherit;

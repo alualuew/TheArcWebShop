@@ -26,8 +26,21 @@ body {
   color: white;
 }
 
- 
+.btn-primary:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: black !important;
+}
 
+.btn-primary {
+  background-color: #218a3b !important;
+  border: solid 1px #218a3b !important;
+}
+
+.dropdown-menu a {
+  width: 100%;
+ 
+}
 
 
 

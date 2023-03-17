@@ -24,7 +24,7 @@ public class UserController {
     public UserController(UserService userService) { //konstruktor
         this.userService = userService;}
 
-//GetMapping Aannotation für alle Get Requests
+//GetMapping Annotation für alle Get Requests
 @GetMapping
 public List<User> getAllUsers() {
     return userService.getAllUsers();

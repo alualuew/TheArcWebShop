@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +31,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-public Product findProductById(@PathVariable Long id) {
+public Optional<Product> findProductById(@PathVariable Long id) {
     return productService.findById(id);
 }
 @DeleteMapping("/{id}")

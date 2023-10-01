@@ -13,7 +13,16 @@ public class User{
 @Id //für Primärschlüsselfeld
 @GeneratedValue //vergibt automatisch Identifikation
 @Column(name = "id")
-private final Long id;
+private  Long id;
+
+@Column(name = "username", nullable = false)
+private String username;
+
+@Column(name = "password", nullable = false)
+private String password;
+
+@Column(name = "admin", nullable = false)
+private boolean admin;
 
 @NotBlank
 @Column(name = "email")
@@ -43,18 +52,6 @@ private String street;
 @Column(name = "streetnumber")
 private Long streetnumber;
 
-//default constructor
-public User() {
-    this.id = null;
-    this.email = null;
-    this.firstname = null;
-    this.lastname = null;
-    this.postalcode = null;
-    this.city = null;
-    this.street = null;
-    this.streetnumber = null;
-}
-
 
 //constructor
 public User(Long id, String email, String firstname, String lastname, Long postalcode, String city, String street,
@@ -72,7 +69,33 @@ public User(Long id, String email, String firstname, String lastname, Long posta
 
 //getters and setters
 
+public Long getId() {
+    return id;
+}
 
+public String getUsername() {
+    return username;
+}
+
+public void setUsername(String username) {
+    this.username = username;
+}
+
+public String getPassword() {
+    return password;
+}
+
+public void setPassword(String password) {
+    this.password = password;
+}
+
+public boolean isAdmin() {
+    return admin;
+}
+
+public void setAdmin(boolean admin) {
+    this.admin = admin;
+}
 
 public String getEmail() {
     return email;
@@ -114,11 +137,11 @@ public void setCity(String city) {
     this.city = city;
 }
 
-public String getStreet() {
+public String getStreetaddress() {
     return street;
 }
 
-public void setStreet(String street) {
+public void setStreetaddress(String street) {
     this.street = street;
 }
 

@@ -1,6 +1,7 @@
 package service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,10 +32,10 @@ public Product createProduct (@RequestBody Product product) { //neues Produkt in
     return productRepository.save(product);
 }
 
-public Product findById(Long id) {
-    return productRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Product not found"));
+public Optional<Product> findById(Long id) {
+    return productRepository.findById(id);
 }
+
 public void deleteProduct(Long id) {
     productRepository.deleteById(id);
 }

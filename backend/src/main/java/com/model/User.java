@@ -1,133 +1,93 @@
 package com.model;
-import javax.validation.constraints.NotBlank;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
+@Entity(name = "user")
+public class User {
 
-@Entity
-public class User{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
-@Id //für Primärschlüsselfeld
-@GeneratedValue //vergibt automatisch Identifikation
-@Column(name = "id")
-private final Long id;
+    @Column(name = "username", nullable = false)
+    private String username;
 
-@NotBlank
-@Column(name = "email")
-private String email;
+    @Column(name = "email", nullable = false)
+    private String email;
 
-@NotBlank
-@Column(name = "firstname")
-private String firstname;
+    @Column(name = "password", nullable = false)
+    private String password;
 
-@NotBlank
-@Column(name =  "lastname") 
-private String lastname;
+    @Column(name = "active", nullable = false)
+    private boolean active;
 
-@NotBlank
-@Column(name = "postalcode")
-private Long postalcode;
+    @Column(name = "admin", nullable = false)
+    private boolean admin;
 
-@NotBlank
-@Column(name = "city")
-private String city;
+    @OneToOne // Beziehung zur Address
+    @JoinColumn(name = "address_id")
+    private Address address;
 
-@NotBlank
-@Column(name = "street")
-private String street;
+    /////
+    //Getters and Setters
+    /////
 
-@NotBlank
-@Column(name = "streetnumber")
-private Long streetnumber;
+    public Long getId() {
+        return id;
+    }
 
-//default constructor
-public User() {
-    this.id = null;
-    this.email = null;
-    this.firstname = null;
-    this.lastname = null;
-    this.postalcode = null;
-    this.city = null;
-    this.street = null;
-    this.streetnumber = null;
-}
+    public String getUsername() {
+        return username;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-//constructor
-public User(Long id, String email, String firstname, String lastname, Long postalcode, String city, String street,
-        Long streetnumber) {
-    this.id = id;
-    this.email = email;
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.postalcode = postalcode;
-    this.city = city;
-    this.street = street;
-    this.streetnumber = streetnumber;
-}
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-//getters and setters
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
+    public boolean isActive() {
+        return active;
+    }
 
-public String getEmail() {
-    return email;
-}
+    public void setActive(boolean active){
+        this.active = active;
+    }
 
-public void setEmail(String email) {
-    this.email = email;
-}
+    public boolean isAdmin() {
+        return admin;
+    }
 
-public String getFirstname() {
-    return firstname;
-}
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
 
-public void setFirstname(String firstname) {
-    this.firstname = firstname;
-}
+    public Address getAddress() {
+        return address;
+    }
 
-public String getLastname() {
-    return lastname;
-}
-
-public void setLastname(String lastname) {
-    this.lastname = lastname;
-}
-
-public Long getPostalcode() {
-    return postalcode;
-}
-
-public void setPostalcode(Long postalcode) {
-    this.postalcode = postalcode;
-}
-
-public String getCity() {
-    return city;
-}
-
-public void setCity(String city) {
-    this.city = city;
-}
-
-public String getStreet() {
-    return street;
-}
-
-public void setStreet(String street) {
-    this.street = street;
-}
-
-public Long getStreetnumber() {
-    return streetnumber;
-}
-
-public void setStreetnumber(Long streetnumber) {
-    this.streetnumber = streetnumber;
-}
-
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }

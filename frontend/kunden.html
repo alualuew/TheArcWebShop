@@ -33,8 +33,8 @@
 <hr>
     <form method="post" id="createUser-form">
     <div class="form-group">
-        <label for="mail">E-Mail</label>
-        <input type="text" class="form-control" id="mail" name="mail">
+        <label for="email">E-Mail</label>
+        <input type="email" class="form-control" id="email" required>
     </div>
     <div class="form-group">
         <label for="anrede">Anrede</label>
@@ -52,6 +52,17 @@
         <label for="nname"> Nachname</label>
         <input type="text" class="form-control" id="nname" name="nname">
     </div>
+
+    <div class="form-group">
+        <label for="username"> Benutzername</label>
+        <input type="text" class="form-control" id="username" required>
+    </div>
+
+    <div class="form-group">
+        <label for="password"> Passwort</label>
+        <input type="password" class="form-control" id="password" required>
+    </div>
+
     <div class="form-group">
         <label for="plz">Postleitzahl</label>
         <input type="text" class="form-control" id="plz" name="plz">

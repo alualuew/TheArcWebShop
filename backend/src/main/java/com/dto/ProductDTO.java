@@ -1,63 +1,42 @@
-package com.model;
+package com.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.Length;
 
-@Entity(name = "product")
-public class Product {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+public class ProductDTO {
+
     private Long id;
 
-    @Column(name = "name")
+    @NotBlank
+    @Length(min = 4, max = 100)
     private String name;
 
-    @Column(name = "description", length = 1000)
     private String description;
-
-    @Column(name = "image_url")
     private String imageUrl;
 
-    @Column(name = "price")
+    @DecimalMin("0.01")
     private double price;
 
-    @Column(name = "quantity")
+    @Min(1)
     private int quantity;
 
-    @Column(name = "type")
     private String type;
-
-    @Column(name = "active")
+    
     private boolean active;
 
-    /////
-    //Init
-    /////
 
-    public Product(String name, String description, String imageUrl, double price, int quantity, String type, Boolean active) {
-        this.name = name;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.price = price;
-        this.quantity = quantity;
-        this.type = type;
-        this.active = active;
-    }
-
-    public Product() {
-    }
-
-    /////
-    //Getters and Setters
-    /////
+    // /////////////////////////////////////////////////////////////////////////
+    // Getters and Setters
+    // /////////////////////////////////////////////////////////////////////////
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -42,5 +42,9 @@ body {
  
 }
 
+button#loginButtonOverlay:hover {
+    background-color: #006400; /* Dark green color code */
+    color: #fff; /* Text color (white) */
+}
 
 

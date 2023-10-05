@@ -1,39 +1,29 @@
-package com.model;
+package com.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
-@Entity(name = "user")
-public class User {
+public class UserDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "username", nullable = false)
+    @NotBlank(message = "Benutzername darf nicht leer sein")
     private String username;
 
-    @Column(name = "email", nullable = false)
+    @NotBlank
     private String email;
 
-    @Column(name = "password", nullable = false)
+    @NotBlank(message = "Passwort darf nicht leer sein")
+    @Size(min = 8, message = "Passwort muss mindestens 8 Zeichen lang sein")
     private String password;
 
-    @Column(name = "active", nullable = false)
     private boolean active;
 
-    @Column(name = "admin", nullable = false)
-    private boolean admin;
+    @NotNull(message = "admin darf nicht null sein")
+    private Boolean admin;
 
-    @OneToOne // Beziehung zur Address
-    @JoinColumn(name = "address_id")
-    private Address address;
+    private AddressDTO address; // Feld für die Adresse hinzufügen
 
     /////
     //Getters and Setters
@@ -41,6 +31,10 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -71,7 +65,7 @@ public class User {
         return active;
     }
 
-    public void setActive(boolean active){
+    public void setActive(boolean active) {
         this.active = active;
     }
 
@@ -83,11 +77,11 @@ public class User {
         this.admin = admin;
     }
 
-    public Address getAddress() {
+    public AddressDTO getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(AddressDTO address) {
         this.address = address;
     }
 }

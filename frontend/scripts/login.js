@@ -1,34 +1,48 @@
 function login() {
-    $.post({
-      url: "http://localhost:8080/login",
-      contentType: "application/json",
-      data: JSON.stringify({
-        username: $("#usernameInput").val(),
-        password: $("#passwordInput").val()
-      }),
-      success: function(data) {
-        var timestamp = new Date().toISOString(); // Aktuellen Zeitpunkt erfassen
-        sessionStorage.setItem("token", data);
-        sessionStorage.setItem("loginTimestamp", timestamp); // Timestamp speichern
-        location.href = "index.html";
-        console.log("Eingeloggt");
-      },
-      error: function() {
-        console.error
-        alert("Falscher Benutzername oder Passwort!")
+  console.log("login here");
+
+  // Get the username and password from input fields
+  const username = $("#usernameInput").val();
+  const password = $("#passwordInput").val();
+
+  // Create a JSON object with the username and password
+  const loginData = {
+    username: username,
+    password: password
+  };
+
+  fetch("http://localhost:8080/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(loginData)
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.text(); 
+      } else {
+        throw new Error("Network response was not ok.");
       }
-  
+    })
+    .then(data => {
+      const timestamp = new Date().toISOString();
+      sessionStorage.setItem("token", data);
+      sessionStorage.setItem("loginTimestamp", timestamp);
+      location.href = "index.html";
+      console.log("Eingeloggt");
+    })
+    .catch(error => {
+      console.error(error);
+      alert("Falscher Benutzername oder Passwort!");
     });
-  }
+}
   
-  $(document).on('shown.bs.modal', '#navbarModal', function() {
     document.getElementById("loginButton").addEventListener("click", login);
       $('#usernameInput').focus();
-  });
   
   
   
-  // Token-Timestamp-Check
   
   function checkTokenValidity() {
     var loginTimestamp = sessionStorage.getItem("loginTimestamp");

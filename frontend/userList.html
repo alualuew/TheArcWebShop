@@ -22,6 +22,8 @@
       </script>
       <script src="./scripts/checkAdmin.js"></script>
       <script defer src="./scripts/loginState.js"></script>
+
+      <script src="/frontend/scripts/editUser.js" defer></script>
 </head>
 <body>
     <overlay></overlay>
@@ -42,16 +44,31 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Beispielzeile -->
                 <tr>
-                    <td>1</td>
-                    <td>Max Mustermann</td>
-                    <td>max@beispiel.de</td>
-                    <td>Ja</td>
-                    <td>Nein</td>
-                    <td><button class="btn btn-primary btn-sm edit-btn">Bearbeiten</button></td>
-                </tr>
-                <!-- Weitere Zeilen je nach Bedarf... -->
+                    <td class='align-middle' id="editUserId"></td>
+                    <td class='align-middle'>
+                      <input id='editUserName' type='text' class='form-control'>
+                    </td>
+                    <td>
+                      <input id='editUserEmail' type='email' class='form-control'>
+                    </td>
+                    <td>
+                      <select class='form-control' id='editUserActive'>
+                        <option class="text-center" value='true'>&#10004;&#65039;</option>
+                        <option class="text-center" value='false'>&#10060;</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class='form-control' id='editUserAdmin'>
+                        <option class="text-center" value='true'>&#10004;&#65039;</option>
+                        <option class="text-center" value='false'>&#10060;</option>
+                      </select>
+                    </td>
+                    <td class='text-end'>
+                      <button class='btn btn-primary mx-1' id="saveEditUser">&#x1F4BE; Speichern</button>
+                      <button class='btn btn-secondary' id="cancelEditUser">&#x2716;&#xFE0F; Abbrechen</button>
+                    </td>
+                  </tr>
             </tbody>
         </table>
 

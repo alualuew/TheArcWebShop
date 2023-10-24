@@ -41,6 +41,8 @@ function displayProducts() {
             <div class="product-item col-md-4">
                 <img src="./product-images/${products[i].imageUrl}" class="img-fluid" alt="${products[i].name}">
                 <p>${products[i].name}</p>
+                <p>${products[i].price}</p>
+                <p>${products[i].description}</p>
             </div>`;
         
         productContainer.append(productElem);

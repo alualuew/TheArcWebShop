@@ -24,7 +24,7 @@ if (sessionStorage.getItem("token") !== null) {
               <br>
               <a href="./userList.html" class="btn btn-green">Benutzerverwaltung</a>
               <br>
-              <a href="#" class="btn btn-green">Produke bearbeiten</a>
+              <a href="#" class="btn btn-green">Produkte bearbeiten</a>
           </div>
       `;
 

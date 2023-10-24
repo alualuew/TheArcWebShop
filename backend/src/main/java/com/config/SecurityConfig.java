@@ -34,10 +34,6 @@ public class SecurityConfig {
     // Methods
     // /////////////////////////////////////////////////////////////////////////
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
     
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
@@ -69,5 +65,10 @@ public class SecurityConfig {
                         UsernamePasswordAuthenticationFilter.class);
 
         return httpSecurity.build();
+    }
+    
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }

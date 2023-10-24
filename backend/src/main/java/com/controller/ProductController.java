@@ -40,8 +40,9 @@ public class ProductController {
     // Methods
     /////
 
+
     @GetMapping
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    //@PreAuthorize("hasRole('ROLE_ADMIN')")
     public List<Product> getAllProducts(
             @RequestParam(name = "searchterm", required = false) String searchterm,
             @RequestParam(name = "activeFilter", required = false) Boolean activeFilter) {

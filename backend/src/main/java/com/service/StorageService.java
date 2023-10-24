@@ -26,7 +26,7 @@ public class StorageService {
     public StorageService(FileRepository fileRepository) {
         this.fileRepository = fileRepository;
         // Set the storage directory
-        storageDirectory = Path.of("frontend/img/Produkte_img/");
+        storageDirectory = Path.of("frontend/product-images/");
     }
 
     public File store(MultipartFile file) throws IOException {

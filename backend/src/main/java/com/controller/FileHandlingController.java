@@ -52,7 +52,7 @@ public class FileHandlingController {
         File fileEntity = storageService.store(file);
         fileRepository.save(fileEntity);
 
-        return fileEntity.getId().toString();
+        return fileEntity.getPath().toString();
     }
 
     @PutMapping("/update")

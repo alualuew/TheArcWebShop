@@ -53,12 +53,12 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 //admin requests
                 .requestMatchers(HttpMethod.POST, "/products", "/users/update", "/files").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.GET, "/users", "/products").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.GET, "/users").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/users/update", "/products/update", "/files/update").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "/users/{id}", "/products/{id}").hasRole("ADMIN")
                 //all user requests
                 .requestMatchers(HttpMethod.POST, "/users/createUser", "/positions").permitAll()
-                .requestMatchers(HttpMethod.GET, "/files/**", "/products/active", "/{cartId}/positions", "/positions/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/files/**", "/products/active", "/{cartId}/positions", "/positions/**", "/products").permitAll()
                 .requestMatchers("/login", "/addresses", "/addresses/users/**", "/users/{id}/address").permitAll()
 
                 // Authenticate all other requests
